@@ -1,16 +1,25 @@
-# Compiled class file
+# Java Artifacts
 *.class
 
-# Log file
+# Eclipse-specific Files
+.settings/
+.mvn/wrapper/
+.classpath
+.factorypath
+.project
+.settings/
+HELP.md
+
+# Log Files
 *.log
 
-# BlueJ files
+# BlueJ Files
 *.ctxt
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.nar
@@ -19,6 +28,7 @@
 *.tar.gz
 *.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# Virtual Machine Crash Logs
 hs_err_pid*
 replay_pid*
+

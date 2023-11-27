@@ -2,16 +2,15 @@
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
 		<meta charset="UTF-8">
-		<title>MyCab Buddy</title>
+		<title>Menu</title>
 	</head>
 	<body>
 		<div th:fragment="header">
-			<h1>Menu</h1>
+			<h1>Welcome to MyCab Buddy</h1>
 			<ul>
 		      <li><a th:href="@{/}">Home</li>
-		      <li><a th:href="@{/create}">New</a></li>
-		      <li><a th:href="@{/search}">Search</a></li>
-		      <li><a th:href="@{/list}">List</a></li>
+		      <li><a th:href="@{/view}">View Bookings</a></li>
+		      <li><a th:href="@{/book}">Book A Cab</a></li>
 		    </ul>
 		</div>
 	</body>

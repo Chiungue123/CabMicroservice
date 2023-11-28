@@ -21,15 +21,11 @@ public interface BookingsClient {
 	    @GetMapping("/bookings")
 	    List<BookingsDTO> getBookings();
 	    
-	    @PostMapping("/create")
+	    @PostMapping("/bookings/create")
 	    BookingsDTO createBooking(@RequestBody BookingsDTO booking);
 	    
-	    @PutMapping("/update")
+	    @PutMapping("/bookings/update")
 	    BookingsDTO updateBooking(@RequestBody BookingsDTO booking);
-	    
-	    /*
-	     *  Will Require validation findByIdNotUsername in Booking Service's Service Package
-	     */
 	   
 	    @DeleteMapping("/delete/{id}")
 	    BookingsDTO deleteBookingById(@PathVariable("id") Integer id);

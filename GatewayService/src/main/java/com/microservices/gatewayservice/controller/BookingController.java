@@ -27,6 +27,7 @@ public class BookingController {
 	private final BookingsClient bookingsClient;
 
     public BookingController(BookingsClient bookingsClient) {
+    	logger.debug("Booking Gateway: Adding BookingsClient Proxy to BookingsController Constuctor");
         this.bookingsClient = bookingsClient;
     }
     

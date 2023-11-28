@@ -19,6 +19,6 @@ eureka:
 
 logging:
   level:
-    debug: DEBUG  # Sets the logging level for debugging purposes.
-    '[com.microservices.priceservice]': DEBUG  # Sets the logging level specifically for the Price Service proxy to DEBUG.
+    web: DEBUG
+    '[com.microservices.gatewayservice]': DEBUG  # Sets the logging level specifically for the Price Service proxy to DEBUG.
     # The logging level can be adjusted based on the development stage (DEBUG, ERROR, OFF).

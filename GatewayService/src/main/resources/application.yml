@@ -1,19 +1,24 @@
 spring:
   application:
-    name: gateway-service
+    name: gateway-service  # Defines the name of the application as it will appear in Eureka and other places.
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true  # Enables automatic route discovery from Eureka.
+          lowerCaseServiceId: true  # Converts the service IDs to lower case when discovering routes.
 
 server:
-  port: 8000  # Choose a unique port
+  port: 8765  # Specifies the port on which the Gateway Service will run.
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/  # URL of the Eureka server for service registration and discovery.
 
-#Logger
-logging.level:
-  debug: DEBUG
-  '[com.microservices.priceservice]': DEBUG
-  # Can be DEBUG for Development
-  # Can be ERROR after Development
-  # Can be OFF to turn the logger statemts off
+logging:
+  level:
+    debug: DEBUG  # Sets the logging level for debugging purposes.
+    '[com.microservices.priceservice]': DEBUG  # Sets the logging level specifically for the Price Service proxy to DEBUG.
+    # The logging level can be adjusted based on the development stage (DEBUG, ERROR, OFF).

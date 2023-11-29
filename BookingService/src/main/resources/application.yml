@@ -1,13 +1,26 @@
+# Server Name
 spring:
-  application:
-    name: booking-service
+  application.name: booking-service
+  config.import: "optional:configserver"
   datasource:
-    url: jdbc:mysql://localhost:3306/java_projects
+    url: jdbc:mysql://localhost:3306/full_stack
     username: root
     password: root1
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        ddl-auto: validate
+        '[format_sql]': true
+        dialect: org.hibernate.dialect.MySQLDialect
+        naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        
+# Enable Actuator
+management.endpoints.web.exposure.include: "*"
 
+# Server Port
 server:
-  port: 8000  # Choose a unique port
+  port: 8000 
 
 eureka:
   client:
@@ -17,7 +30,4 @@ eureka:
 #Logger
 logging.level:
   debug: DEBUG
-  '[com.javaprojects.springcrud]': DEBUG
-  # Can be DEBUG for Development
-  # Can be ERROR after Development
-  # Can be OFF to turn the logger statemts off
+  '[com.microservices.bookingservice]': DEBUG

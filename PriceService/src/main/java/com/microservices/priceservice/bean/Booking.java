@@ -8,20 +8,18 @@ public class Booking {
 		private String pickUpTime; // Time Format 24:00
 		private String fare;
 		private String vehicleType;
-		private String bookingEnvironment;
 		
 		Booking(){
 			
 		}
 		
 		public Booking(Integer id, String pickUpLocation, String dropOffLocation, 
-				String pickUpTime, String vehicleType, String bookingEnvironment) {
+				String pickUpTime, String vehicleType) {
 			this.id = id;
 			this.pickUpLocation = pickUpLocation;
 			this.dropOffLocation = dropOffLocation;
 			this.pickUpTime = pickUpTime;
 			this.vehicleType = vehicleType;
-			this.bookingEnvironment = bookingEnvironment;
 		}
 
 		public Integer getId() {
@@ -60,11 +58,4 @@ public class Booking {
 		public void setVehicleType(String vehicleType) {
 			this.vehicleType = vehicleType;
 		}
-		public String getBookingEnvironment() {
-			return bookingEnvironment;
-		}
-		public void setBookingEnvironment(String bookingEnvironment) {
-			this.bookingEnvironment = bookingEnvironment;
-		}
-	
 }

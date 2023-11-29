@@ -21,7 +21,6 @@ public class PaymentController {
 	@GetMapping("/payment")
 	public Booking calculatePayment(@RequestBody Booking booking) throws Exception {
 		
-		logger.debug("PaymentController: Calculating Payment for Booking with id: {}", booking.getId());
 		booking.setFare(service.calculatePayment(booking));
 		
 		return booking;

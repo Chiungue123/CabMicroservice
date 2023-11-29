@@ -20,8 +20,8 @@ public class PaymentService {
 		String vehicle = booking.getVehicleType();
 		
 		logger.debug("PaymentService: Calculating Payment");
-		logger.debug("PaymentService: Pickup Time: " + time);
-		logger.debug("PaymentService: Vehicle Type: " + vehicle);
+		logger.debug("PaymentService: Pickup Time: {}", time);
+		logger.debug("PaymentService: Vehicle Type: {}", vehicle);
 		
 		
 		int value1 = 0;

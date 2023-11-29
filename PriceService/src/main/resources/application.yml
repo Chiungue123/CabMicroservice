@@ -1,15 +1,23 @@
+# Server Name
 spring:
-  application:
-    name: price-service
-  datasource:
-    url: jdbc:mysql://localhost:3306/java_projects
-    username: root
-    password: root1
-
+  application.name: price-service
+  config.import: "optional:configserver"
+    
+    
+# Server Port
 server:
-  port: 8001  # Choose a unique port
-
+  port: 8100
+  
+# Eureka Server URL to Resister Service
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+#Logger
+logging.level:
+  debug: DEBUG
+  '[com.microservices.priceservice]': DEBUG
+  # Can be DEBUG for Development
+  # Can be ERROR after Development
+  # Can be OFF to turn the logger statemts off

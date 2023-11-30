@@ -9,6 +9,8 @@ spring:
           enabled: true  # Enables automatic route discovery from Eureka.
           lowerCaseServiceId: true  # Converts the service IDs to lower case when discovering routes.
 
+management.endpoints.web.exposure.include: "*"
+
 server:
   port: 8765  # Specifies the port on which the Gateway Service will run.
 

@@ -1,8 +1,6 @@
 # Server Name
 spring:
   application.name: price-service
-  config.import: "optional:configserver"
-    
     
 # Server Port
 server:
@@ -14,9 +12,12 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
 
-#Logger
+# Enable Actuator
+management.endpoints.web.exposure.include: "*"
+
+# Logger
 logging.level:
-  debug: DEBUG
+  web: DEBUG
   '[com.microservices.priceservice]': DEBUG
   # Can be DEBUG for Development
   # Can be ERROR after Development

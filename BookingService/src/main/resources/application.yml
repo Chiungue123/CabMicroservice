@@ -1,7 +1,6 @@
 # Server Name
 spring:
   application.name: booking-service
-  config.import: "optional:configserver"
   datasource:
     url: jdbc:mysql://localhost:3306/full_stack
     username: root
@@ -29,5 +28,5 @@ eureka:
 
 #Logger
 logging.level:
-  debug: DEBUG
+  web: DEBUG
   '[com.microservices.bookingservice]': DEBUG

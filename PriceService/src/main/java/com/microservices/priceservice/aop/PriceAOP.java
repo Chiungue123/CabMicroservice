@@ -21,7 +21,7 @@ public class PriceAOP {
 	
 	final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
-	@Before("execution(Booking com.microservices.priceservice.controller.calculatePayment(..)) and args(booking)")
+	@Before("execution(* com.microservices.priceservice.controller.PaymentController.calculatePayment(..)) and args(booking)")
 	public void logBefore(JoinPoint joinPoint, Booking booking) {
 		
 		String port = environment.getProperty("local.server.port");
@@ -29,7 +29,7 @@ public class PriceAOP {
 		logger.info("@BEFORE PRICE AOP: Calculating Payment for Booking Id: {}", booking.getId());
 	}
 	
-	@After("execution(Booking com.microservices.priceservice.controller.calculatePayment(..)) and args(booking)")
+	@After("execution(* com.microservices.priceservice.controller.PaymentController.calculatePayment(..)) and args(booking)")
 	public void logAfter(JoinPoint joinPoint, Booking booking) {
 		
 		String port = environment.getProperty("local.server.port");

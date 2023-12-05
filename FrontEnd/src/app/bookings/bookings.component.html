@@ -1,1 +1,26 @@
-<p>bookings works!</p>
+<html>
+<head>
+    <title>Bookings</title>
+</head>
+<body>
+    <h1>Bookings</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Pick Up</th>
+            <th>Drop Off</th>
+            <th>Pick Up Time</th>
+            <th>Fare</th>
+            <th>Vehicle</th>
+        </tr>
+        <tr *ngFor="let booking of bookings">
+            <td>{{ booking.id }}</td>
+            <td>{{ booking.pickUpLocation }}</td>
+            <td>{{ booking.dropOffLocation }}</td>
+            <td>{{ booking.pickUpTime }}</td>
+            <td>{{ booking.fare }}</td>
+            <td>{{ booking.vehicleType }}</td>
+        </tr>
+    </table>
+</body>
+</html>

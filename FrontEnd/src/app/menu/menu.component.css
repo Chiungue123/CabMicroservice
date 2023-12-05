@@ -1,0 +1,29 @@
+/* Style for the entire navigation bar */
+.nav {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 10px 0;          /* Padding around the nav bar */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Style for navigation links */
+.nav-links a {
+    align-items: center;      /* Align content of the nav bar vertically */
+    justify-content: center;  /* Align content of the nav bar horizontally */
+    color: #007bff;          /* Bootstrap primary color for links */
+    text-decoration: none;   /* Remove underline from links */
+    padding: 10px 15px;      /* Padding around each link */
+    display: inline-block;   /* Align links in a line */
+}
+
+/* Hover effect for links */
+.nav-links a:hover {
+    color: #0056b3;          /* Darker shade for hover state */
+    background-color: #e2e6ea; /* Light background on hover */
+    border-radius: 5px;      /* Rounded corners for the background */
+}
+
+/* Style for the active link (you may need to add a class or use routerLinkActive in Angular) */
+.nav-links a.active {
+    color: #fff;             /* White color for active link */
+    background-color: #007bff; /* Bootstrap primary color for background */
+}

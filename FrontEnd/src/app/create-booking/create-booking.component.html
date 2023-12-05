@@ -1,1 +1,26 @@
-<p>create-booking works!</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Booking</title>
+</head>
+<body>
+    <h1>Create Booking</h1>
+    <form ngSubmit(onSubmit)>
+        <label for="dropOffLocation">Drop Off Location</label>
+        <input type="text" id="dropOffLocation" name="dropOffLocation"><br><br>
+        <label for="pickUpTime">Pick Up Time</label>
+        <input type="text" id="pickUpTime" name="pickUpTime"><br><br>
+        <label for="pickUpLocation">Pick Up Location</label>
+        <input type="text" id="pickUpLocation" name="pickUpLocation"><br><br>
+        <label for="fare">Fare</label>
+        <input type="text" id="fare" name="fare"><br><br>
+        <label for="vehicle">Vehicle</label>
+        <select id="vehicle" name="vehicle">
+            <option value="car">Car</option>
+            <option value="van">Van</option>
+            <option value="truck">Truck</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

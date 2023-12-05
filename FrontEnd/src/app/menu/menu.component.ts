@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
 
+  ngOnInit(): void {
+    console.log("Menu Component: ngOnInit")
+  }
+
 }

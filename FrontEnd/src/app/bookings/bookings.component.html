@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Bookings</title>
@@ -12,6 +13,8 @@
             <th>Pick Up Time</th>
             <th>Fare</th>
             <th>Vehicle</th>
+            <th> # </th>
+            <th> # </th>
         </tr>
         <tr *ngFor="let booking of bookings">
             <td>{{ booking.id }}</td>
@@ -20,6 +23,8 @@
             <td>{{ booking.pickUpTime }}</td>
             <td>{{ booking.fare }}</td>
             <td>{{ booking.vehicleType }}</td>
+            <td><a routerLink="">Update</a></td>
+            <td><button type="button" (click)="onDelete(booking.id)">Delete</button></td>
         </tr>
     </table>
 </body>

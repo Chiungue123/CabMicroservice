@@ -7,6 +7,9 @@ import { MenuComponent } from './menu/menu.component';
 import { CreateBookingComponent } from './create-booking/create-booking.component';
 import { BookingsComponent } from './bookings/bookings.component';
 import { UpdateBookingComponent } from './update-booking/update-booking.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { UpdateBookingComponent } from './update-booking/update-booking.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,11 +7,10 @@ import { UpdateBookingComponent } from './update-booking/update-booking.componen
 import { HttpClientModule } from '@angular/common/http';
 
 const routes: Routes = [
-  { path: 'app-bookings', component: BookingsComponent},
+  { path: 'bookings', component: BookingsComponent},
   { path: 'bookings/:id', component: BookingsComponent},
-  { path: 'app-create-booking', component: CreateBookingComponent},
-  { path: 'bookings/update', component: UpdateBookingComponent},
-  { path: '', component: MenuComponent}
+  { path: 'create', component: CreateBookingComponent},
+  { path: 'bookings/update', component: UpdateBookingComponent}
 
 ];
 

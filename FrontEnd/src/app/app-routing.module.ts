@@ -8,7 +8,6 @@ import { ROUTES } from './config/route-config';
 
 const routes: Routes = [
   { path: ROUTES.bookings, component: BookingsComponent },
-  { path: ROUTES.bookingDetail, component: BookingsComponent },
   { path: ROUTES.createBooking, component: CreateBookingComponent },
   { path: ROUTES.updateBooking, component: UpdateBookingComponent }
 ];

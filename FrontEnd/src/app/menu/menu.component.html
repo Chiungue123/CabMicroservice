@@ -8,7 +8,11 @@
     <div class="nav">
         <div class="nav-links">
             <a routerLink="/bookings">View Bookings</a>
-            <a routerLink="/create">Create Booking</a>
+            <button type="button" (click)="onCreate()">Create Booking</button>
         </div>
+        <form class="nav-search" [formGroup]="form">
+            <label for="search">Search ID</label>
+            <input formControlName="search" type="number" placeholder="ID Number">
+        </form>
     </div>
 </nav>

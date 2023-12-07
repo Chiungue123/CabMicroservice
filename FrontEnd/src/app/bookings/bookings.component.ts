@@ -4,6 +4,8 @@ import { DataService } from '../data.service';
 import { Observable } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 import { HttpClient } from '@angular/common/http';
+import { ROUTES } from '../config/route-config';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bookings',
@@ -12,23 +14,36 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BookingsComponent {
 
-  bookings: Booking[] = []
+  searchId!: Number | null;
+  filteredBookings: Booking[] = [];
+  bookings: Booking[] = [];
 
-  constructor(private dataService: DataService, private http: HttpClient, private toastr: ToastrService) { }
+  constructor(private dataService: DataService, private http: HttpClient, private toastr: ToastrService, private router: Router) { }
 
   ngOnInit(): void {
-    console.log("Bookings Component: ngOnInit")
     this.getBookings().subscribe(
       (data: Booking[]) => {
-        console.log("Bookings: " + data);
+        console.log("Bookings: ", data);
         this.bookings = data;
-        this.toastr.success('Bookings retrieved successfully', 'Success');
+        this.filteredBookings = this.bookings;
       });
-  }
-  
+    
+    this.dataService.currentSearchId.subscribe(searchId => {
+      if (searchId == null) {
+        this.filteredBookings = this.bookings;
+      } else {
+        this.filteredBookings = this.bookings.filter(booking => booking.id === searchId);
+      }
+   });
+}
+
   getBookings() {
-    console.log("Data Service: Get Bookings")
     return this.dataService.getBookings();
+  }
+
+  onUpdate(id: Number) {
+    this.dataService.setMode('update', this.bookings.find(booking => booking.id === id));
+    this.router.navigate([ROUTES.createBooking]);
   }
 
   onDelete(id: Number) {

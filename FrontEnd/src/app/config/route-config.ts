@@ -1,6 +1,6 @@
 export const ROUTES = {
     bookings: 'bookings',
-    bookingDetail: 'bookings/:id',
+    bookingById: 'bookings/:id',
     createBooking: 'create',
     updateBooking: 'bookings/update'
 };

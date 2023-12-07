@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Bookings</h1>
-    <table border="1">
+    <table>
         <tr>
             <th>ID</th>
             <th>Pick Up</th>
@@ -16,15 +16,15 @@
             <th> # </th>
             <th> # </th>
         </tr>
-        <tr *ngFor="let booking of bookings">
+        <tr *ngFor="let booking of filteredBookings">
             <td>{{ booking.id }}</td>
             <td>{{ booking.pickUpLocation }}</td>
             <td>{{ booking.dropOffLocation }}</td>
             <td>{{ booking.pickUpTime }}</td>
-            <td>{{ booking.fare }}</td>
+            <td>${{ booking.fare }}</td>
             <td>{{ booking.vehicleType }}</td>
-            <td><a routerLink="">Update</a></td>
-            <td><button type="button" (click)="onDelete(booking.id)">Delete</button></td>
+            <td><button class="update" type="button" (click)="onUpdate(booking.id)">Update</button></td>
+            <td><button class="delete" type="button" (click)="onDelete(booking.id)">Delete</button></td>
         </tr>
     </table>
 </body>

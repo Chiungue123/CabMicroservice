@@ -4,8 +4,8 @@
     <title>Create Booking</title>
 </head>
 <body>
-    <h2>Schedule Booking</h2>
-    <form [formGroup]="bookingForm" (ngSubmit)="createBooking()">
+    <h1>{{ mode === 'update' ? 'Update Booking' : 'Schedule Booking' }}</h1>
+    <form [formGroup]="bookingForm" (ngSubmit)="onSubmit()">
         <div class="field">
             <label for="pickUpLocation">Pick Up Location</label>
             <input formControlName="pickUpLocation" type="text">
@@ -38,7 +38,7 @@
             <div class="input">{{ bookingForm.get('fare')?.value | currency:'USD':'symbol':'1.2-2' }}</div>
             <br><br>
         </div> 
-        <button type="submit">Submit</button>
+        <button type="submit">{{ mode === 'update' ? 'Update' : 'Submit' }}</button>
     </form>
 </body>
 </html>

@@ -4,29 +4,41 @@
     <title>Create Booking</title>
 </head>
 <body>
-    <h1>Create Booking</h1>
+    <h2>Schedule Booking</h2>
     <form [formGroup]="bookingForm" (ngSubmit)="createBooking()">
-        <label for="pickUpLocation">Pick Up Location</label>
-        <input formControlName="pickUpLocation">
-        <br><br>
-        <label for="dropOffLocation">Drop Off Location</label>
-        <input formControlName="dropOffLocation">
-        <br><br>
-        <label for="pickUpTime">Pick Up Time</label>
-        <input formControlName="pickUpTime">
-        <br><br>
-        <label for="fare">Fare</label>
-        <input formControlName="fare">
-        <br><br>
-        <label for="vehicle">Vehicle</label>
-        <select id="vehicle" name="vehicle">
-            <option value="Bently">Bently</option>
-            <option value="Audi">Adui</option>
-            <option value="Jeep">Jeep</option>
-            <option value="Ford">Ford</option>
-            <option value="Honda">Honda</option>
-        </select><br><br>
-        <input type="submit" value="Submit">
+        <div class="field">
+            <label for="pickUpLocation">Pick Up Location</label>
+            <input formControlName="pickUpLocation" type="text">
+            <br><br>
+        </div>  
+        <div class="field">
+            <label for="dropOffLocation">Drop Off Location</label>
+            <input formControlName="dropOffLocation" type="text">
+            <br><br>
+        </div>
+        <div class="field">
+            <label for="pickUpTime">Pick Up Time</label>
+            <input formControlName="pickUpTime" type="text">
+            <br><br>
+        </div> 
+        <div class="field">
+            <label for="vehicle">Vehicle</label>
+            <select id="vehicle" formControlName="vehicleType">
+                <option value="" disabled selected>Select Vehicle</option>
+                <option value="Bently">Bently</option>
+                <option value="Audi">Adui</option>
+                <option value="Jeep">Jeep</option>
+                <option value="Ford">Ford</option>
+                <option value="Honda">Honda</option>
+            </select>
+            <br><br>
+        </div>
+        <div class="field">
+            <label for="fare">Fare</label>
+            <div class="input">{{ bookingForm.get('fare')?.value | currency:'USD':'symbol':'1.2-2' }}</div>
+            <br><br>
+        </div> 
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>

@@ -8,12 +8,12 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class DataService {
-
+  
   constructor(private http: HttpClient) { }
 
   createBooking(booking: Booking){
-    console.log("Data Service: Create Booking")
-    return this.http.post<Booking>(environment.host + 'bookings/create', booking)
+    console.log("Data Service: Create Booking. URL: " + environment.host + "/bookings/create")
+    return this.http.post<Booking>(environment.host + '/bookings/create', booking)
   }
 
   getBookings(): Observable<Booking[]> {
@@ -34,6 +34,13 @@ export class DataService {
   deleteBooking(id: Number){
     console.log("Data Service: Delete Booking, id: " + id)
     return this.http.delete<Booking>(environment.host + '/bookings/delete/' + id)
+  }
+
+  calculatePayment(pickUpTime: String, vehicleType: String) {
+    console.log("Data Service: Calculating Payment. URL: " + environment.host + '/bookings/calculatePayment/' + pickUpTime)
+    console.log("Pick Up Time: " + pickUpTime)
+    console.log("Vehicle Type: " + vehicleType)
+    return this.http.get<String>(environment.host + '/bookings/payment/' + pickUpTime + '/' + vehicleType)
   }
 
 }

@@ -2,7 +2,7 @@
 spring:
   application.name: booking-service
   datasource:
-    url: jdbc:mysql://localhost:3306/full_stack
+    url: jdbc:mysql://localhost:3306/cab_microservice
     username: root
     password: root1
   jpa:

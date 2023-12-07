@@ -1,0 +1,82 @@
+html {
+    width: 95vw;
+    height: 70vh;
+    padding: 0;
+    margin: auto;
+    background-color: white;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+}
+
+h1 {
+    margin: 0;
+    padding: 25px;
+    font-size: 2.5rem;
+}
+
+form {
+    margin: 0;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.field{
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 35px;
+    padding: 0;
+}
+
+.field div{
+    border: #000 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    font-weight: 100;
+}
+
+.field select {
+    border: #000 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+}
+
+input {
+    border: #000 1px solid;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+}
+
+label {
+    margin: 0;
+    padding: 0;
+    width: 30%;
+}
+
+button {
+    align-self: center;
+    width: 200px;
+    height: 35px;
+    margin: 5%;
+    padding: 0;
+    border: 1px solid #d487f0;
+    border-radius: 2px;
+    background-color: #d487f0;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+form button:hover {
+    cursor: pointer;
+    background-color: #d37bf3;
+}

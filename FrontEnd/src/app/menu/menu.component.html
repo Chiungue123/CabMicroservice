@@ -1,1 +1,18 @@
-<p>menu works!</p>
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation Bar</title>
+    <link rel="stylesheet" href="menu.component.css">
+    <base href="/">
+</head>
+<nav>
+    <div class="nav">
+        <div class="nav-links">
+            <a routerLink="/bookings">View Bookings</a>
+            <button type="button" (click)="onCreate()">Create Booking</button>
+        </div>
+        <form class="nav-search" [formGroup]="form">
+            <label for="search">Search ID</label>
+            <input formControlName="search" type="number" placeholder="ID Number">
+        </form>
+    </div>
+</nav>

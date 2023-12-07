@@ -53,11 +53,11 @@ public class BookingController {
     	return newBooking;
     }
     
-    @PostMapping("/payment")
-    Booking calculatePayment(@RequestBody Booking booking) {
+    @GetMapping("/payment/{pickUpTime}/{vehicleType}")
+    String calculatePayment(@PathVariable("pickUpTime") String pickUpTime, @PathVariable("vehicleType") String vehicleType) {
     	
-    	logger.debug("Booking Controller: Calculating Payment for Booking: {}", booking);
-    	Booking calculatedBooking = service.calculatePayment(booking);
+    	logger.debug("Booking Controller: Calculating Payment for Booking {}");
+    	String calculatedBooking = service.calculatePayment(pickUpTime, vehicleType);
     	
     	return calculatedBooking;
     }

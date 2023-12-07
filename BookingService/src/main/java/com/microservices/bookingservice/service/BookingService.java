@@ -41,9 +41,11 @@ public class BookingService {
 	public Booking createBooking(Booking booking) {
 		
 		logger.debug("Booking Service: Create Booking: {}", booking);
-		this.validateBooking(booking);
 		
-		return null;
+		this.validateBooking(booking);
+		Booking newBooking = this.repository.save(booking);
+		
+		return newBooking;
 	}
 	
 	public Booking updateBooking(Integer id, Booking booking) {
@@ -73,14 +75,16 @@ public class BookingService {
 		
 	}
 
-	public Booking calculatePayment(Booking booking) {
+	public String calculatePayment(String pickUpTime, String vehicleType) {
 		
-		logger.debug("Booking Service: Calculating Payment for Booking: {}", booking);
+		logger.debug("Booking Service: Calculating Payment for Booking: {}");
+		logger.debug("Booking Service: Calculating Payment: Vehicle: {}", vehicleType);
+		logger.debug("Booking Service: Calculating Payment: Pick Up Time: {}", pickUpTime);
 		
-		this.validateBooking(booking);
-		Booking newBooking = this.paymentProxy.calculatePayment(booking);
+		this.validateBooking(pickUpTime, vehicleType);
+		String payment = this.paymentProxy.calculatePayment(pickUpTime, vehicleType);
 		
-		return newBooking;
+		return payment;
 	}
 	
 	private void validateBooking(Booking booking) {
@@ -94,4 +98,14 @@ public class BookingService {
             throw new RuntimeException("Invalid Booking Data: " + booking);
         }
 	}
+	
+	private void validateBooking(String pickUpTime, String vehicleType) {
+		
+		if (pickUpTime == null || vehicleType == null) {
+			
+			throw new RuntimeException("Invalid Booking Data: Vehichle: " + vehicleType + ", Pick Up Time: " + pickUpTime);
+		}
+
+	}
+	
 }

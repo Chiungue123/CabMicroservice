@@ -62,11 +62,11 @@ public class BookingController {
     	return calculatedBooking;
     }
     
-    @PutMapping("/update")
-    Booking updateBooking(@RequestBody Booking booking) {
+    @PutMapping("/update/{id}")
+    Booking updateBooking(@PathVariable Integer id, @RequestBody Booking booking) {
     	
-    	logger.debug("Booking Controller: Updating Booking with id: {}", booking.getId());
-    	Booking updatedBooking = service.updateBooking(booking.getId(), booking);
+    	logger.debug("Booking Controller: Updating Booking with id: {}", id);
+    	Booking updatedBooking = service.updateBooking(id, booking);
     	
     	return updatedBooking;
     }

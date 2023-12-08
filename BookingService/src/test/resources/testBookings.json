@@ -1,0 +1,42 @@
+[
+    {
+		"booking": {
+			"pickUpLocation": "Location A",
+	        "dropOffLocation": "Location B",
+	        "pickUpTime": "10:30",
+	        "fare": "25.50",
+	        "vehicleType": "Bently"
+		},
+        "expectedStatus": 200
+    },
+    {
+		"booking": {
+	        "pickUpLocation": "Location C",
+	        "dropOffLocation": "Location D",
+	        "pickUpTime": "15:45",
+	        "fare": "30.00",
+	        "vehicleType": "Audi"
+	    },
+        "expectedStatus": 200
+    },
+    {
+		"booking": {
+	        "pickUpLocation": "",
+	        "dropOffLocation": "Location F",
+	        "pickUpTime": "20:00",
+	        "fare": "20.00",
+	        "vehicleType": "Ford"
+	    },
+        "expectedStatus": 400
+    },
+    {
+		"booking": {
+	        "pickUpLocation": "Location G",
+	        "dropOffLocation": "",
+	        "pickUpTime": "23:15",
+	        "fare": "40.00",
+	        "vehicleType": "Jeep"   
+	    },
+        "expectedStatus": 400
+    }
+]

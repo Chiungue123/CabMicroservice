@@ -93,5 +93,11 @@ public class Booking {
 	public void setVehicleType(String vehicleType) {
 		this.vehicleType = vehicleType;
 	}
+	
+	@Override
+	public String toString() {
+		return "Booking [id=" + id + ", pickUpLocation=" + pickUpLocation + ", dropOffLocation=" + dropOffLocation
+				+ ", pickUpTime=" + pickUpTime + ", fare=" + fare + ", vehicleType=" + vehicleType + "]";
+	}
 
 }

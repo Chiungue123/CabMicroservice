@@ -43,6 +43,8 @@ public class BookingService {
 		logger.debug("Booking Service: Create Booking: {}", booking);
 		
 		this.validateBooking(booking);
+		
+		booking.setFare(calculatePayment(booking.getPickUpTime(), booking.getVehicleType()));
 		Booking newBooking = this.repository.save(booking);
 		
 		return newBooking;
@@ -52,13 +54,13 @@ public class BookingService {
 		
 		logger.debug("Booking Service: Updating Booking id: {}", id, "to Booking: {}", booking);
 		this.validateBooking(booking);
-		
+				
 		repository.findById(id)
 			.ifPresent( b -> {
 				b.setPickUpLocation(booking.getPickUpLocation());
 				b.setDropOffLocation(booking.getDropOffLocation());
 				b.setPickUpTime(booking.getPickUpTime());
-				b.setFare(booking.getFare());
+				b.setFare(calculatePayment(booking.getPickUpTime(), booking.getVehicleType()));
 				b.setVehicleType(booking.getVehicleType());
 				
 			repository.save(b);
@@ -88,15 +90,18 @@ public class BookingService {
 	}
 	
 	private void validateBooking(Booking booking) {
-       
-		if (booking.getPickUpLocation().isEmpty() ||
-            booking.getDropOffLocation().isEmpty() ||
-            booking.getPickUpTime().isEmpty() ||
-			booking.getFare().isEmpty() ||
-			booking.getVehicleType().isEmpty()) {
-			
-            throw new RuntimeException("Invalid Booking Data: " + booking);
-        }
+	    if (isEmpty(booking.getPickUpLocation()) ||
+	        isEmpty(booking.getDropOffLocation()) ||
+	        isEmpty(booking.getPickUpTime()) ||
+	        isEmpty(booking.getFare()) ||
+	        isEmpty(booking.getVehicleType())) {
+	        
+	        throw new RuntimeException("Invalid Booking Data: " + booking.toString());
+	    }
+	}
+	
+	private boolean isEmpty(String str) {
+	    return str == null || str.isEmpty();
 	}
 	
 	private void validateBooking(String pickUpTime, String vehicleType) {
